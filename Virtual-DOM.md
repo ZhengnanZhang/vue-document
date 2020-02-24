@@ -280,7 +280,7 @@ Patch算法是虚拟DOM中最核心的部分，它可以将vnode渲染成真实�
 新旧两个子节点列表是通过循环进行对比的，newChildren中的一个节点，在oldChildren中去寻找，如果没有找到，说明这是一个新的节点，需要插入到真实的DOM中，那么就生成一个真实的节点然后插入到oldChildren中所有未处理节点（未处理就是没有进行任何更新操作的节点)的前面。
 这里的创建子节点其实也是上面2.1的新增节点，因为这个patch过程也是一个深度优先的过程。
 
-![我是图片](https://raw.githubusercontent.com/ZhengnanZhang/vue-document/master/image/7-11.jpg)
+![我是图片](https://github.com/ZhengnanZhang/vue-document/raw/master/image/7-11.jpg)
 
                                                     图片 1
 
