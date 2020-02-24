@@ -353,7 +353,7 @@ function removeNode (el) {
 * 旧后：oldChildren中所有未处理的最后一个节点。
 
 所以每当从newChildren中循环到一个点，我们都先按照这个快捷查找走一遍，如果没有找到，再进行创建节点的操作。进行快捷查找时，首先判断新前与旧前，如果找到，那就是位置相同也是同一个节点，进行普通的更新操作就行。如果新前与旧前不相同，那么我们接下来执行新后与旧后，同理相同就更新节点，不同的话再执行新后与旧前，如果新后与旧前是同一个节点，由于他们的位置不同，所以除了更新以外还需要移动他们的位置。这里我们移动和之前有些不同，我们要把点移动到oldChildren中未处理的点的最后，原因看下图：
-![我是图片](https://github.com/ZhengnanZhang/vue-document/tree/master/image/7-22.jpg)
+![我是图片](https://raw.githubusercontent.com/ZhengnanZhang/vue-document/tree/master/image/7-22.jpg)
 
                                                       图 3
 
