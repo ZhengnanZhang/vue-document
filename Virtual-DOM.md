@@ -280,7 +280,7 @@ Patch算法是虚拟DOM中最核心的部分，它可以将vnode渲染成真实�
 新旧两个子节点列表是通过循环进行对比的，newChildren中的一个节点，在oldChildren中去寻找，如果没有找到，说明这是一个新的节点，需要插入到真实的DOM中，那么就生成一个真实的节点然后插入到oldChildren中所有未处理节点（未处理就是没有进行任何更新操作的节点)的前面。
 这里的创建子节点其实也是上面2.1的新增节点，因为这个patch过程也是一个深度优先的过程。
 
-![我是图片](https://github.com/ZhengnanZhang/vue-document/tree/master/image/7-11.jpg)
+![我是图片](https://raw.githubusercontent.com/ZhengnanZhang/vue-document/master/image/7-11.jpg)
 
                                                     图片 1
 
@@ -353,7 +353,7 @@ function removeNode (el) {
 * 旧后：oldChildren中所有未处理的最后一个节点。
 
 所以每当从newChildren中循环到一个点，我们都先按照这个快捷查找走一遍，如果没有找到，再进行创建节点的操作。进行快捷查找时，首先判断新前与旧前，如果找到，那就是位置相同也是同一个节点，进行普通的更新操作就行。如果新前与旧前不相同，那么我们接下来执行新后与旧后，同理相同就更新节点，不同的话再执行新后与旧前，如果新后与旧前是同一个节点，由于他们的位置不同，所以除了更新以外还需要移动他们的位置。这里我们移动和之前有些不同，我们要把点移动到oldChildren中未处理的点的最后，原因看下图：
-![我是图片](https://raw.githubusercontent.com/ZhengnanZhang/vue-document/tree/master/image/7-22.jpg)
+![我是图片](https://github.com/ZhengnanZhang/vue-document/tree/master/image/7-22.jpg)
 
                                                       图 3
 
